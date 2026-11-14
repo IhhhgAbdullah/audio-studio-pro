@@ -1,19 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+package com.audiostudiopro
 
-    <application
-        android:allowBackup="true"
-        android:label="Audio Studio Pro"
-        android:supportsRtl="true"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
+import android.app.Activity
+import android.os.Bundle
+import android.widget.TextView
 
-</manifest>
+class MainActivity : Activity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val text = TextView(this).apply {
+            text = "Audio Studio Pro يعمل بنجاح ✅"
+            textSize = 24f
+            setPadding(50, 200, 50, 50)
+        }
+        setContentView(text)
+    }
+}
