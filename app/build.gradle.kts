@@ -1,17 +1,35 @@
-package com.audiostudiopro
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+}
 
-import android.app.Activity
-import android.os.Bundle
-import android.widget.TextView
+android {
+    namespace = "com.audiostudiopro"
+    compileSdk = 35
 
-class MainActivity : Activity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val textView = TextView(this).apply {
-            text = "Audio Studio Pro is Working!"
-            textSize = 24f
-            setPadding(50, 200, 50, 50)
-        }
-        setContentView(textView)
+    defaultConfig {
+        applicationId = "com.audiostudiopro"
+        minSdk = 24
+        targetSdk = 35
+        versionCode = 1
+        versionName = "0.1.0"
     }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+dependencies {
+    implementation("androidx.core:core-ktx:1.13.1")
 }
